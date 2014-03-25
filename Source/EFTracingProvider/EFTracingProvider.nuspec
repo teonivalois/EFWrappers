@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+ <metadata>
+  <id>CommunityEFProviderWrappers.EFTracingProvider</id>
+  <version>1.0.0</version>
+  <title>Entity Framework Tracing Provider</title>
+  <authors>$author$</authors>
+  <owners>Stephen Cleary</owners>
+  <summary>$description$</summary>
+  <description>$description$</description>
+  <language>en-US</language>
+  <licenseUrl>http://efwrappers.codeplex.com/license</licenseUrl>
+  <projectUrl>http://efwrappers.codeplex.com/</projectUrl>
+  <tags>entity-framework ef entities linq trace tracing database provider</tags>
+  <dependencies>
+   <dependency id="CommunityEFProviderWrappers.EFProviderWrapperToolkit" />
+  </dependencies>
+ </metadata>
+</package>
