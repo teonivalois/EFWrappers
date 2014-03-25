@@ -12,6 +12,15 @@ namespace EFCachingProvider.Caching
     /// </summary>
     public interface ICache
     {
+
+        /// <summary>
+        /// Checks wether the command should be cached
+        /// </summary>
+        /// <param name="rawKey"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        bool ShouldCache(string rawKey, Dictionary<string, string> parameters);
+
         /// <summary>
         /// Tries to the get cached entry by key.
         /// </summary>

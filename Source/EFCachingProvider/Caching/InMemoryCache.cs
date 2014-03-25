@@ -117,6 +117,18 @@ namespace EFCachingProvider.Caching
         }
 
         /// <summary>
+        /// InMemoryCache should cache everything
+        /// </summary>
+        /// <param name="rawKey"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public bool ShouldCache(string rawKey, Dictionary<string, string> parameters)
+        {
+            //Caches everything
+            return true;
+        }
+
+        /// <summary>
         /// Tries to the get entry by key.
         /// </summary>
         /// <param name="key">The cache key.</param>
