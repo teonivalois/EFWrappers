@@ -1,0 +1,94 @@
+SELECT 
+[GroupBy1].[A1] AS [C1]
+FROM ( SELECT 
+	COUNT(1) AS [A1]
+	FROM [dbo].[Customers] AS [Extent1]
+)  AS [GroupBy1]
+
+SELECT TOP (5) 
+[Project1].[CustomerID] AS [CustomerID], 
+[Project1].[CompanyName] AS [CompanyName], 
+[Project1].[ContactName] AS [ContactName], 
+[Project1].[ContactTitle] AS [ContactTitle], 
+[Project1].[Phone] AS [Phone], 
+[Project1].[Fax] AS [Fax], 
+[Project1].[C1] AS [C1], 
+[Project1].[Address] AS [Address], 
+[Project1].[City] AS [City], 
+[Project1].[Region] AS [Region], 
+[Project1].[PostalCode] AS [PostalCode], 
+[Project1].[Country] AS [Country]
+FROM ( SELECT [Project1].[CustomerID] AS [CustomerID], [Project1].[CompanyName] AS [CompanyName], [Project1].[ContactName] AS [ContactName], [Project1].[ContactTitle] AS [ContactTitle], [Project1].[Address] AS [Address], [Project1].[City] AS [City], [Project1].[Region] AS [Region], [Project1].[PostalCode] AS [PostalCode], [Project1].[Country] AS [Country], [Project1].[Phone] AS [Phone], [Project1].[Fax] AS [Fax], [Project1].[C1] AS [C1], row_number() OVER (ORDER BY [Project1].[CustomerID] ASC) AS [row_number]
+	FROM ( SELECT 
+		[Extent1].[CustomerID] AS [CustomerID], 
+		[Extent1].[CompanyName] AS [CompanyName], 
+		[Extent1].[ContactName] AS [ContactName], 
+		[Extent1].[ContactTitle] AS [ContactTitle], 
+		[Extent1].[Address] AS [Address], 
+		[Extent1].[City] AS [City], 
+		[Extent1].[Region] AS [Region], 
+		[Extent1].[PostalCode] AS [PostalCode], 
+		[Extent1].[Country] AS [Country], 
+		[Extent1].[Phone] AS [Phone], 
+		[Extent1].[Fax] AS [Fax], 
+		1 AS [C1]
+		FROM [dbo].[Customers] AS [Extent1]
+	)  AS [Project1]
+)  AS [Project1]
+WHERE [Project1].[row_number] > 0
+ORDER BY [Project1].[CustomerID] ASC
+
+SELECT 
+[GroupBy1].[A1] AS [C1]
+FROM ( SELECT 
+	COUNT(1) AS [A1]
+	FROM  [dbo].[InternationalOrders] AS [Extent1]
+	INNER JOIN [dbo].[Orders] AS [Extent2] ON [Extent1].[OrderID] = [Extent2].[OrderID]
+	WHERE [Extent2].[CustomerID] = @CustomerID
+)  AS [GroupBy1]
+-- CustomerID (dbtype=String, size=-1, direction=Input) = ""-----""
+
+SELECT TOP (10) 
+[Project1].[C1] AS [C1], 
+[Project1].[OrderID] AS [OrderID], 
+[Project1].[CustomerID] AS [CustomerID], 
+[Project1].[EmployeeID] AS [EmployeeID], 
+[Project1].[OrderDate] AS [OrderDate], 
+[Project1].[RequiredDate] AS [RequiredDate], 
+[Project1].[ShippedDate] AS [ShippedDate], 
+[Project1].[Freight] AS [Freight], 
+[Project1].[ShipName] AS [ShipName], 
+[Project1].[ShipAddress] AS [ShipAddress], 
+[Project1].[ShipCity] AS [ShipCity], 
+[Project1].[ShipRegion] AS [ShipRegion], 
+[Project1].[ShipPostalCode] AS [ShipPostalCode], 
+[Project1].[ShipCountry] AS [ShipCountry], 
+[Project1].[CustomsDescription] AS [CustomsDescription], 
+[Project1].[ExciseTax] AS [ExciseTax]
+FROM ( SELECT [Project1].[OrderID] AS [OrderID], [Project1].[CustomsDescription] AS [CustomsDescription], [Project1].[ExciseTax] AS [ExciseTax], [Project1].[CustomerID] AS [CustomerID], [Project1].[EmployeeID] AS [EmployeeID], [Project1].[OrderDate] AS [OrderDate], [Project1].[RequiredDate] AS [RequiredDate], [Project1].[ShippedDate] AS [ShippedDate], [Project1].[Freight] AS [Freight], [Project1].[ShipName] AS [ShipName], [Project1].[ShipAddress] AS [ShipAddress], [Project1].[ShipCity] AS [ShipCity], [Project1].[ShipRegion] AS [ShipRegion], [Project1].[ShipPostalCode] AS [ShipPostalCode], [Project1].[ShipCountry] AS [ShipCountry], [Project1].[C1] AS [C1], row_number() OVER (ORDER BY [Project1].[OrderID] ASC) AS [row_number]
+	FROM ( SELECT 
+		[Extent1].[OrderID] AS [OrderID], 
+		[Extent1].[CustomsDescription] AS [CustomsDescription], 
+		[Extent1].[ExciseTax] AS [ExciseTax], 
+		[Extent2].[CustomerID] AS [CustomerID], 
+		[Extent2].[EmployeeID] AS [EmployeeID], 
+		[Extent2].[OrderDate] AS [OrderDate], 
+		[Extent2].[RequiredDate] AS [RequiredDate], 
+		[Extent2].[ShippedDate] AS [ShippedDate], 
+		[Extent2].[Freight] AS [Freight], 
+		[Extent2].[ShipName] AS [ShipName], 
+		[Extent2].[ShipAddress] AS [ShipAddress], 
+		[Extent2].[ShipCity] AS [ShipCity], 
+		[Extent2].[ShipRegion] AS [ShipRegion], 
+		[Extent2].[ShipPostalCode] AS [ShipPostalCode], 
+		[Extent2].[ShipCountry] AS [ShipCountry], 
+		'0X0X' AS [C1]
+		FROM  [dbo].[InternationalOrders] AS [Extent1]
+		INNER JOIN [dbo].[Orders] AS [Extent2] ON [Extent1].[OrderID] = [Extent2].[OrderID]
+		WHERE [Extent2].[CustomerID] = @CustomerID
+	)  AS [Project1]
+)  AS [Project1]
+WHERE [Project1].[row_number] > 0
+ORDER BY [Project1].[OrderID] ASC
+-- CustomerID (dbtype=String, size=-1, direction=Input) = ""-----""
+
