@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -238,6 +239,7 @@ namespace AspNetCachingDemo
         private ObjectSet<Territory> _Territories;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -321,11 +323,11 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -352,6 +354,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -454,6 +457,7 @@ namespace AspNetCachingDemo
         partial void OnPictureChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -480,6 +484,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -508,6 +513,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -658,6 +664,7 @@ namespace AspNetCachingDemo
         partial void OnFaxChanged();
 
         #endregion
+
         #region Complex Properties
     
         /// <summary>
@@ -692,6 +699,7 @@ namespace AspNetCachingDemo
         partial void OnAddressChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -718,6 +726,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -746,6 +755,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1160,6 +1170,7 @@ namespace AspNetCachingDemo
         partial void OnPhotoPathChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1186,6 +1197,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1214,6 +1226,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1265,6 +1278,7 @@ namespace AspNetCachingDemo
         partial void OnExciseTaxChanged();
 
         #endregion
+
     
     }
     
@@ -1291,6 +1305,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1609,6 +1624,7 @@ namespace AspNetCachingDemo
         partial void OnShipCountryChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1711,6 +1727,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1743,6 +1760,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1872,6 +1890,7 @@ namespace AspNetCachingDemo
         partial void OnDiscountChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1952,6 +1971,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1980,6 +2000,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2394,6 +2415,7 @@ namespace AspNetCachingDemo
         partial void OnPhotoPathChanged();
 
         #endregion
+
     
     }
     
@@ -2423,6 +2445,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2693,6 +2716,7 @@ namespace AspNetCachingDemo
         partial void OnDiscontinuedDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2795,6 +2819,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2821,6 +2846,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2875,6 +2901,7 @@ namespace AspNetCachingDemo
         partial void OnRegionDescriptionChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2901,6 +2928,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2927,6 +2955,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3221,6 +3250,7 @@ namespace AspNetCachingDemo
         partial void OnHomePageChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3247,6 +3277,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3275,6 +3306,7 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3353,6 +3385,7 @@ namespace AspNetCachingDemo
         partial void OnRegionIDChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3417,9 +3450,11 @@ namespace AspNetCachingDemo
         }
 
         #endregion
+
     }
 
     #endregion
+
     #region ComplexTypes
     
     /// <summary>
@@ -3553,8 +3588,10 @@ namespace AspNetCachingDemo
         partial void OnCountryChanged();
 
         #endregion
+
     }
 
     #endregion
+
     
 }
