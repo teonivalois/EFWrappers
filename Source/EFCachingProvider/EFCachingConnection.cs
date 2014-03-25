@@ -75,5 +75,15 @@ namespace EFCachingProvider
         {
             return new EFCachingTransaction(WrappedConnection.BeginTransaction(isolationLevel), this);
         }
+
+        internal EFCachingEnlistment Enlistment { get; set; }
+
+        public override void Open() {
+            base.Open();
+            if (System.Transactions.Transaction.Current != null) {
+                this.Enlistment = new EFCachingEnlistment { Cache = this.Cache, HasModifications = false };
+                System.Transactions.Transaction.Current.EnlistVolatile(this.Enlistment, System.Transactions.EnlistmentOptions.None);
+            }
+        }
     }
 }

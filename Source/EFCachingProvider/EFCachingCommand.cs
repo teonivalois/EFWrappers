@@ -252,18 +252,22 @@ namespace EFCachingProvider
 #endif
         }
 
-        private void UpdateAffectedEntitySets()
-        {
-            if (this.transaction != null)
-            {
-                if (this.Definition.IsModification)
-                {
+        private void UpdateAffectedEntitySets() {
+            if (this.transaction != null) {
+                if (this.Definition.IsModification) {
                     this.transaction.HasModifications = true;
                 }
 
-                foreach (EntitySetBase entitySet in this.Definition.AffectedEntitySets)
-                {
+                foreach (EntitySetBase entitySet in this.Definition.AffectedEntitySets) {
                     this.transaction.AddAffectedEntitySet(entitySet);
+                }
+            } else if (this.Connection.Enlistment != null) {
+                if (this.Definition.IsModification) {
+                    this.Connection.Enlistment.HasModifications = true;
+                }
+
+                foreach (EntitySetBase entitySet in this.Definition.AffectedEntitySets) {
+                    this.Connection.Enlistment.AddAffectedEntitySet(entitySet);
                 }
             }
         }

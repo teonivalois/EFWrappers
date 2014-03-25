@@ -97,6 +97,7 @@
     <Compile Include="EFCachingConnection.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="EFCachingEnlistment.cs" />
     <Compile Include="EFCachingExtensionMethods.cs" />
     <Compile Include="EFCachingProviderFactory.cs" />
     <Compile Include="EFCachingProviderServices.cs" />
