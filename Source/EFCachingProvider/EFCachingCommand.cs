@@ -163,7 +163,7 @@ namespace EFCachingProvider
             }
 
             this.UpdateAffectedEntitySets();
-            string cacheKey = this.GetCacheKey(false);
+            string cacheKey = this.GetCacheKey();
             if (cacheKey == null || !this.Definition.IsCacheable() || !this.Connection.CachingPolicy.CanBeCached(this.Definition))
             {
                 // non-cacheable
@@ -206,19 +206,6 @@ namespace EFCachingProvider
                             TimeSpan slidingExpiration;
 
                             this.Connection.CachingPolicy.GetExpirationTimeout(this.Definition, out slidingExpiration, out absoluteExpiration);
-
-                            string rawCacheKey = this.GetCacheKey(true);
-                            Dictionary<string, string> entryParameters = new Dictionary<string, string>();
-                            foreach (DbParameter parameter in Parameters) 
-                            {
-                                entryParameters.Add("@" + parameter.ParameterName, GetLiteralValue(parameter.Value));
-                            }
-
-                            if (cache.ShouldCache(rawCacheKey, entryParameters))
-                            {
-                                cache.PutItem(cacheKey, entry, dependentEntitySets, slidingExpiration, absoluteExpiration);
-                            }
-
                             cache.PutItem(cacheKey, entry, dependentEntitySets, slidingExpiration, absoluteExpiration);
                         }
                     });
@@ -237,23 +224,21 @@ namespace EFCachingProvider
             }
         }
 
-        private string GetCacheKey(bool raw)
+        private string GetCacheKey()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(CommandType);
             sb.Append("|");
             sb.Append(CommandText);
 
-            if (!raw)
+            foreach (DbParameter parameter in Parameters) 
             {
-                foreach (DbParameter parameter in Parameters) {
-                    if (parameter.Direction != ParameterDirection.Input) {
-                        // we don't cache queries with output parameters
-                        return null;
-                    }
-
-                    sb = sb.Replace("@" + parameter.ParameterName, GetLiteralValue(parameter.Value));
+                if (parameter.Direction != ParameterDirection.Input) {
+                    // we don't cache queries with output parameters
+                    return null;
                 }
+
+                sb = sb.Replace("@" + parameter.ParameterName, GetLiteralValue(parameter.Value));
             }
 
 #if HASH_COMMANDS
