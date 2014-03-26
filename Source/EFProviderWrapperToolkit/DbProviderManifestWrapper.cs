@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System.Data.Common;
+using System.Data.Entity.Core.Common;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -63,7 +64,7 @@ namespace EFProviderWrapperToolkit
         /// <returns>
         /// The instance of that <see cref="T:System.Data.Metadata.Edm.TypeUsage"/> encapsulates both an EDM type and a set of facets for that type.
         /// </returns>
-        public override System.Data.Metadata.Edm.TypeUsage GetEdmType(System.Data.Metadata.Edm.TypeUsage storeType)
+        public override System.Data.Entity.Core.Metadata.Edm.TypeUsage GetEdmType(System.Data.Entity.Core.Metadata.Edm.TypeUsage storeType)
         {
             return this.wrappedProviderManifest.GetEdmType(storeType);
         }
@@ -75,7 +76,7 @@ namespace EFProviderWrapperToolkit
         /// <returns>
         /// A collection of type <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> that contains the list of facet descriptions for the specified Entity Data Model (EDM) type.
         /// </returns>
-        public override System.Collections.ObjectModel.ReadOnlyCollection<System.Data.Metadata.Edm.FacetDescription> GetFacetDescriptions(System.Data.Metadata.Edm.EdmType edmType)
+        public override System.Collections.ObjectModel.ReadOnlyCollection<System.Data.Entity.Core.Metadata.Edm.FacetDescription> GetFacetDescriptions(System.Data.Entity.Core.Metadata.Edm.EdmType edmType)
         {
             return this.wrappedProviderManifest.GetFacetDescriptions(edmType);
         }
@@ -86,7 +87,7 @@ namespace EFProviderWrapperToolkit
         /// <returns>
         /// A collection of type <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> that contains the list of provider-specific functions.
         /// </returns>
-        public override System.Collections.ObjectModel.ReadOnlyCollection<System.Data.Metadata.Edm.EdmFunction> GetStoreFunctions()
+        public override System.Collections.ObjectModel.ReadOnlyCollection<System.Data.Entity.Core.Metadata.Edm.EdmFunction> GetStoreFunctions()
         {
             return this.wrappedProviderManifest.GetStoreFunctions();
         }
@@ -98,7 +99,7 @@ namespace EFProviderWrapperToolkit
         /// <returns>
         /// The instance of the <see cref="T:System.Data.Metadata.Edm.TypeUsage"/> class that encapsulates both a storage type and a set of facets for that type.
         /// </returns>
-        public override System.Data.Metadata.Edm.TypeUsage GetStoreType(System.Data.Metadata.Edm.TypeUsage edmType)
+        public override System.Data.Entity.Core.Metadata.Edm.TypeUsage GetStoreType(System.Data.Entity.Core.Metadata.Edm.TypeUsage edmType)
         {
             return this.wrappedProviderManifest.GetStoreType(edmType);
         }
@@ -109,7 +110,7 @@ namespace EFProviderWrapperToolkit
         /// <returns>
         /// A collection of type <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> that contains the list of primitive types supported by the storage provider.
         /// </returns>
-        public override System.Collections.ObjectModel.ReadOnlyCollection<System.Data.Metadata.Edm.PrimitiveType> GetStoreTypes()
+        public override System.Collections.ObjectModel.ReadOnlyCollection<System.Data.Entity.Core.Metadata.Edm.PrimitiveType> GetStoreTypes()
         {
             return this.wrappedProviderManifest.GetStoreTypes();
         }

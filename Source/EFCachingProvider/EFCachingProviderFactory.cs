@@ -8,7 +8,7 @@ namespace EFCachingProvider
     /// <summary>
     /// Provider factory for EFCachingProvider
     /// </summary>
-    public class EFCachingProviderFactory : DbProviderFactory, IServiceProvider
+    public class EFCachingProviderFactory : DbProviderFactory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Factory class is immutable.")]
         public static readonly EFCachingProviderFactory Instance = new EFCachingProviderFactory();
@@ -99,27 +99,6 @@ namespace EFCachingProvider
         public override DbParameter CreateParameter()
         {
             throw new NotSupportedException();
-        }
-
-        /// <summary>
-        /// Gets the service object of the specified type.
-        /// </summary>
-        /// <param name="serviceType">An object that specifies the type of service object to get.</param>
-        /// <returns>
-        /// A service object of type <paramref name="serviceType"/>.
-        /// -or-
-        /// null if there is no service object of type <paramref name="serviceType"/>.
-        /// </returns>
-        public object GetService(Type serviceType)
-        {
-            if (serviceType == typeof(DbProviderServices))
-            {
-                return EFCachingProviderServices.Instance;
-            }
-            else
-            {
-                return null;
-            }
         }
     }
 }

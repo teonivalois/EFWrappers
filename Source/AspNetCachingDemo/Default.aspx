@@ -12,15 +12,15 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:EntityDataSource ID="EntityDataSource1" runat="server" 
+        <ef:EntityDataSource ID="EntityDataSource1" runat="server" 
             DefaultContainerName="NorthwindEFEntities" EnableDelete="True" 
-            ContextTypeName="AspNetCachingDemo.ExtendedNorthwindEntities, AspNetCachingDemo"
+            ContextTypeName="AspNetCachingDemo.NorthwindEFEntities, AspNetCachingDemo"
             EnableInsert="True" EnableUpdate="True" EntitySetName="Customers">
-        </asp:EntityDataSource>
+        </ef:EntityDataSource>
     
-        <asp:EntityDataSource ID="EntityDataSource2" runat="server" 
+        <ef:EntityDataSource ID="EntityDataSource2" runat="server" 
             DefaultContainerName="NorthwindEFEntities" EnableDelete="True" 
-            ContextTypeName="AspNetCachingDemo.ExtendedNorthwindEntities, AspNetCachingDemo"
+            ContextTypeName="AspNetCachingDemo.NorthwindEFEntities, AspNetCachingDemo"
             EnableInsert="True" EnableUpdate="True" EntitySetName="Orders" 
             EntityTypeFilter="InternationalOrder" ConnectionString="" 
             Select="" 
@@ -30,7 +30,7 @@
                     DefaultValue="&quot;-----&quot;" Name="CustomerID" 
                     PropertyName="SelectedValue" />
             </WhereParameters>
-        </asp:EntityDataSource>
+        </ef:EntityDataSource>
     
         <br />
         <b>Customers:</b><br />

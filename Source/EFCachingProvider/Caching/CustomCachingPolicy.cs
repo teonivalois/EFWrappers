@@ -2,7 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Data.Metadata.Edm;
+using System.Data.Entity.Core.Metadata.Edm;
 
 namespace EFCachingProvider.Caching
 {

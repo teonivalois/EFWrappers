@@ -8,14 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "CustomerOrders", "Customer", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NorthwindEFModel.Customer), "Orders", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Order))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "Products_Category", "Category", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NorthwindEFModel.Category), "Products", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Product))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "Products_Supplier", "Supplier", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NorthwindEFModel.Supplier), "Products", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Product))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "Order_Details_Product", "Product", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(NorthwindEFModel.Product), "OrderDetails", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.OrderDetail))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "Order_Details_Order", "Order", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(NorthwindEFModel.Order), "OrderDetails", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.OrderDetail))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "EmployeesTerritories", "Employees", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Employee), "Territories", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Territory))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "TerritoriesRegion", "Region", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(NorthwindEFModel.Region), "Territories", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Territory))]
+[assembly: global::System.Data.Entity.Core.Objects.DataClasses.EdmSchemaAttribute()]
+[assembly: global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "CustomerOrders", "Customer", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NorthwindEFModel.Customer), "Orders", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Order))]
+[assembly: global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "Products_Category", "Category", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NorthwindEFModel.Category), "Products", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Product))]
+[assembly: global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "Products_Supplier", "Supplier", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NorthwindEFModel.Supplier), "Products", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Product))]
+[assembly: global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "Order_Details_Product", "Product", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.One, typeof(NorthwindEFModel.Product), "OrderDetails", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.OrderDetail))]
+[assembly: global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "Order_Details_Order", "Order", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.One, typeof(NorthwindEFModel.Order), "OrderDetails", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.OrderDetail))]
+[assembly: global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "EmployeesTerritories", "Employees", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Employee), "Territories", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Territory))]
+[assembly: global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipAttribute("NorthwindEFModel", "TerritoriesRegion", "Region", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.One, typeof(NorthwindEFModel.Region), "Territories", global::System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NorthwindEFModel.Territory))]
 
 // Original file name: NorthwindEF.cs
 // Generation date: 6/5/2009 9:25:39 AM
@@ -25,7 +25,7 @@ namespace NorthwindEFModel
     /// <summary>
     /// There are no comments for NorthwindEntities in the schema.
     /// </summary>
-    public partial class NorthwindEntities : global::System.Data.Objects.ObjectContext
+    public partial class NorthwindEntities : global::System.Data.Entity.Core.Objects.ObjectContext
     {
         /// <summary>
         /// Initializes a new NorthwindEntities object using the connection string found in the 'NorthwindEntities' section of the application configuration file.
@@ -46,7 +46,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// Initialize a new NorthwindEntities object.
         /// </summary>
-        public NorthwindEntities(global::System.Data.EntityClient.EntityConnection connection) : 
+        public NorthwindEntities(global::System.Data.Entity.Core.EntityClient.EntityConnection connection) : 
                 base(connection, "NorthwindEntities")
         {
             this.OnContextCreated();
@@ -55,7 +55,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Employees in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Employee> Employees
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<Employee> Employees
         {
             get
             {
@@ -66,11 +66,11 @@ namespace NorthwindEFModel
                 return this._Employees;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Employee> _Employees;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<Employee> _Employees;
         /// <summary>
         /// There are no comments for Territories in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Territory> Territories
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<Territory> Territories
         {
             get
             {
@@ -81,11 +81,11 @@ namespace NorthwindEFModel
                 return this._Territories;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Territory> _Territories;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<Territory> _Territories;
         /// <summary>
         /// There are no comments for Regions in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Region> Regions
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<Region> Regions
         {
             get
             {
@@ -96,11 +96,11 @@ namespace NorthwindEFModel
                 return this._Regions;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Region> _Regions;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<Region> _Regions;
         /// <summary>
         /// There are no comments for Suppliers in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Supplier> Suppliers
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<Supplier> Suppliers
         {
             get
             {
@@ -111,11 +111,11 @@ namespace NorthwindEFModel
                 return this._Suppliers;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Supplier> _Suppliers;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<Supplier> _Suppliers;
         /// <summary>
         /// There are no comments for Products in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Product> Products
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<Product> Products
         {
             get
             {
@@ -126,11 +126,11 @@ namespace NorthwindEFModel
                 return this._Products;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Product> _Products;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<Product> _Products;
         /// <summary>
         /// There are no comments for Categories in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Category> Categories
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<Category> Categories
         {
             get
             {
@@ -141,11 +141,11 @@ namespace NorthwindEFModel
                 return this._Categories;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Category> _Categories;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<Category> _Categories;
         /// <summary>
         /// There are no comments for Customers in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Customer> Customers
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<Customer> Customers
         {
             get
             {
@@ -156,11 +156,11 @@ namespace NorthwindEFModel
                 return this._Customers;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Customer> _Customers;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<Customer> _Customers;
         /// <summary>
         /// There are no comments for Orders in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Order> Orders
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<Order> Orders
         {
             get
             {
@@ -171,11 +171,11 @@ namespace NorthwindEFModel
                 return this._Orders;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Order> _Orders;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<Order> _Orders;
         /// <summary>
         /// There are no comments for OrderDetails in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<OrderDetail> OrderDetails
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<OrderDetail> OrderDetails
         {
             get
             {
@@ -186,7 +186,7 @@ namespace NorthwindEFModel
                 return this._OrderDetails;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<OrderDetail> _OrderDetails;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<OrderDetail> _OrderDetails;
         /// <summary>
         /// There are no comments for Employees in the schema.
         /// </summary>
@@ -257,11 +257,11 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// OrderID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Order")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Order")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     [global::System.Runtime.Serialization.KnownTypeAttribute(typeof(global::NorthwindEFModel.InternationalOrder))]
-    public partial class Order : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Order : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// Create a new Order object.
@@ -278,7 +278,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property OrderID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int OrderID
         {
@@ -290,7 +290,7 @@ namespace NorthwindEFModel
             {
                 this.OnOrderIDChanging(value);
                 this.ReportPropertyChanging("OrderID");
-                this._OrderID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._OrderID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("OrderID");
                 this.OnOrderIDChanged();
             }
@@ -301,7 +301,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property EmployeeID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int EmployeeID
         {
@@ -313,7 +313,7 @@ namespace NorthwindEFModel
             {
                 this.OnEmployeeIDChanging(value);
                 this.ReportPropertyChanging("EmployeeID");
-                this._EmployeeID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._EmployeeID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("EmployeeID");
                 this.OnEmployeeIDChanged();
             }
@@ -324,7 +324,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property OrderDate in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<global::System.DateTime> OrderDate
         {
@@ -336,7 +336,7 @@ namespace NorthwindEFModel
             {
                 this.OnOrderDateChanging(value);
                 this.ReportPropertyChanging("OrderDate");
-                this._OrderDate = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._OrderDate = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("OrderDate");
                 this.OnOrderDateChanged();
             }
@@ -347,7 +347,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property RequiredDate in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<global::System.DateTime> RequiredDate
         {
@@ -359,7 +359,7 @@ namespace NorthwindEFModel
             {
                 this.OnRequiredDateChanging(value);
                 this.ReportPropertyChanging("RequiredDate");
-                this._RequiredDate = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._RequiredDate = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("RequiredDate");
                 this.OnRequiredDateChanged();
             }
@@ -370,7 +370,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ShippedDate in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<global::System.DateTime> ShippedDate
         {
@@ -382,7 +382,7 @@ namespace NorthwindEFModel
             {
                 this.OnShippedDateChanging(value);
                 this.ReportPropertyChanging("ShippedDate");
-                this._ShippedDate = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._ShippedDate = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("ShippedDate");
                 this.OnShippedDateChanged();
             }
@@ -393,7 +393,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Freight in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<decimal> Freight
         {
@@ -405,7 +405,7 @@ namespace NorthwindEFModel
             {
                 this.OnFreightChanging(value);
                 this.ReportPropertyChanging("Freight");
-                this._Freight = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._Freight = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("Freight");
                 this.OnFreightChanged();
             }
@@ -416,7 +416,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ShipName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ShipName
         {
@@ -428,7 +428,7 @@ namespace NorthwindEFModel
             {
                 this.OnShipNameChanging(value);
                 this.ReportPropertyChanging("ShipName");
-                this._ShipName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ShipName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ShipName");
                 this.OnShipNameChanged();
             }
@@ -439,7 +439,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ShipAddress in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ShipAddress
         {
@@ -451,7 +451,7 @@ namespace NorthwindEFModel
             {
                 this.OnShipAddressChanging(value);
                 this.ReportPropertyChanging("ShipAddress");
-                this._ShipAddress = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ShipAddress = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ShipAddress");
                 this.OnShipAddressChanged();
             }
@@ -462,7 +462,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ShipCity in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ShipCity
         {
@@ -474,7 +474,7 @@ namespace NorthwindEFModel
             {
                 this.OnShipCityChanging(value);
                 this.ReportPropertyChanging("ShipCity");
-                this._ShipCity = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ShipCity = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ShipCity");
                 this.OnShipCityChanged();
             }
@@ -485,7 +485,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ShipRegion in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ShipRegion
         {
@@ -497,7 +497,7 @@ namespace NorthwindEFModel
             {
                 this.OnShipRegionChanging(value);
                 this.ReportPropertyChanging("ShipRegion");
-                this._ShipRegion = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ShipRegion = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ShipRegion");
                 this.OnShipRegionChanged();
             }
@@ -508,7 +508,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ShipPostalCode in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ShipPostalCode
         {
@@ -520,7 +520,7 @@ namespace NorthwindEFModel
             {
                 this.OnShipPostalCodeChanging(value);
                 this.ReportPropertyChanging("ShipPostalCode");
-                this._ShipPostalCode = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ShipPostalCode = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ShipPostalCode");
                 this.OnShipPostalCodeChanged();
             }
@@ -531,7 +531,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ShipCountry in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ShipCountry
         {
@@ -543,7 +543,7 @@ namespace NorthwindEFModel
             {
                 this.OnShipCountryChanging(value);
                 this.ReportPropertyChanging("ShipCountry");
-                this._ShipCountry = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ShipCountry = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ShipCountry");
                 this.OnShipCountryChanged();
             }
@@ -554,7 +554,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Customer in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "CustomerOrders", "Customer")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "CustomerOrders", "Customer")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -562,11 +562,11 @@ namespace NorthwindEFModel
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("NorthwindEFModel.CustomerOrders", "Customer").Value;
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("NorthwindEFModel.CustomerOrders", "Customer").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("NorthwindEFModel.CustomerOrders", "Customer").Value = value;
+                ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("NorthwindEFModel.CustomerOrders", "Customer").Value = value;
             }
         }
         /// <summary>
@@ -574,38 +574,38 @@ namespace NorthwindEFModel
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Customer> CustomerReference
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityReference<Customer> CustomerReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("NorthwindEFModel.CustomerOrders", "Customer");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("NorthwindEFModel.CustomerOrders", "Customer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Customer>("NorthwindEFModel.CustomerOrders", "Customer", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Customer>("NorthwindEFModel.CustomerOrders", "Customer", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for OrderDetails in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Order_Details_Order", "OrderDetails")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Order_Details_Order", "OrderDetails")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<OrderDetail> OrderDetails
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityCollection<OrderDetail> OrderDetails
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<OrderDetail>("NorthwindEFModel.Order_Details_Order", "OrderDetails");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<OrderDetail>("NorthwindEFModel.Order_Details_Order", "OrderDetails");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<OrderDetail>("NorthwindEFModel.Order_Details_Order", "OrderDetails", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<OrderDetail>("NorthwindEFModel.Order_Details_Order", "OrderDetails", value);
                 }
             }
         }
@@ -616,7 +616,7 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// OrderID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="InternationalOrder")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="InternationalOrder")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class InternationalOrder : Order
@@ -640,7 +640,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property CustomsDescription in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string CustomsDescription
         {
@@ -652,7 +652,7 @@ namespace NorthwindEFModel
             {
                 this.OnCustomsDescriptionChanging(value);
                 this.ReportPropertyChanging("CustomsDescription");
-                this._CustomsDescription = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._CustomsDescription = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("CustomsDescription");
                 this.OnCustomsDescriptionChanged();
             }
@@ -663,7 +663,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ExciseTax in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public decimal ExciseTax
         {
@@ -675,7 +675,7 @@ namespace NorthwindEFModel
             {
                 this.OnExciseTaxChanging(value);
                 this.ReportPropertyChanging("ExciseTax");
-                this._ExciseTax = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._ExciseTax = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("ExciseTax");
                 this.OnExciseTaxChanged();
             }
@@ -690,17 +690,17 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// EmployeeID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Employee")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Employee")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     [global::System.Runtime.Serialization.KnownTypeAttribute(typeof(global::NorthwindEFModel.CurrentEmployee))]
     [global::System.Runtime.Serialization.KnownTypeAttribute(typeof(global::NorthwindEFModel.PreviousEmployee))]
-    public abstract partial class Employee : global::System.Data.Objects.DataClasses.EntityObject
+    public abstract partial class Employee : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// There are no comments for Property EmployeeID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int EmployeeID
         {
@@ -712,7 +712,7 @@ namespace NorthwindEFModel
             {
                 this.OnEmployeeIDChanging(value);
                 this.ReportPropertyChanging("EmployeeID");
-                this._EmployeeID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._EmployeeID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("EmployeeID");
                 this.OnEmployeeIDChanged();
             }
@@ -723,7 +723,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property LastName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string LastName
         {
@@ -735,7 +735,7 @@ namespace NorthwindEFModel
             {
                 this.OnLastNameChanging(value);
                 this.ReportPropertyChanging("LastName");
-                this._LastName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._LastName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("LastName");
                 this.OnLastNameChanged();
             }
@@ -746,7 +746,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property FirstName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string FirstName
         {
@@ -758,7 +758,7 @@ namespace NorthwindEFModel
             {
                 this.OnFirstNameChanging(value);
                 this.ReportPropertyChanging("FirstName");
-                this._FirstName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._FirstName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("FirstName");
                 this.OnFirstNameChanged();
             }
@@ -769,7 +769,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Title in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Title
         {
@@ -781,7 +781,7 @@ namespace NorthwindEFModel
             {
                 this.OnTitleChanging(value);
                 this.ReportPropertyChanging("Title");
-                this._Title = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Title = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Title");
                 this.OnTitleChanged();
             }
@@ -792,7 +792,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property TitleOfCourtesy in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string TitleOfCourtesy
         {
@@ -804,7 +804,7 @@ namespace NorthwindEFModel
             {
                 this.OnTitleOfCourtesyChanging(value);
                 this.ReportPropertyChanging("TitleOfCourtesy");
-                this._TitleOfCourtesy = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._TitleOfCourtesy = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("TitleOfCourtesy");
                 this.OnTitleOfCourtesyChanged();
             }
@@ -815,7 +815,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property BirthDate in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<global::System.DateTime> BirthDate
         {
@@ -827,7 +827,7 @@ namespace NorthwindEFModel
             {
                 this.OnBirthDateChanging(value);
                 this.ReportPropertyChanging("BirthDate");
-                this._BirthDate = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._BirthDate = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("BirthDate");
                 this.OnBirthDateChanged();
             }
@@ -838,7 +838,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property HireDate in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<global::System.DateTime> HireDate
         {
@@ -850,7 +850,7 @@ namespace NorthwindEFModel
             {
                 this.OnHireDateChanging(value);
                 this.ReportPropertyChanging("HireDate");
-                this._HireDate = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._HireDate = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("HireDate");
                 this.OnHireDateChanged();
             }
@@ -861,7 +861,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Address in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmComplexPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmComplexPropertyAttribute()]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         [global::System.Xml.Serialization.XmlElement(IsNullable=true)]
         [global::System.Xml.Serialization.SoapElement(IsNullable=true)]
@@ -891,7 +891,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property HomePhone in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string HomePhone
         {
@@ -903,7 +903,7 @@ namespace NorthwindEFModel
             {
                 this.OnHomePhoneChanging(value);
                 this.ReportPropertyChanging("HomePhone");
-                this._HomePhone = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._HomePhone = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("HomePhone");
                 this.OnHomePhoneChanged();
             }
@@ -914,7 +914,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Extension in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Extension
         {
@@ -926,7 +926,7 @@ namespace NorthwindEFModel
             {
                 this.OnExtensionChanging(value);
                 this.ReportPropertyChanging("Extension");
-                this._Extension = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Extension = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Extension");
                 this.OnExtensionChanged();
             }
@@ -937,19 +937,19 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Photo in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public byte[] Photo
         {
             get
             {
-                return global::System.Data.Objects.DataClasses.StructuralObject.GetValidValue(this._Photo);
+                return global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.GetValidValue(this._Photo);
             }
             set
             {
                 this.OnPhotoChanging(value);
                 this.ReportPropertyChanging("Photo");
-                this._Photo = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Photo = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Photo");
                 this.OnPhotoChanged();
             }
@@ -960,7 +960,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Notes in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Notes
         {
@@ -972,7 +972,7 @@ namespace NorthwindEFModel
             {
                 this.OnNotesChanging(value);
                 this.ReportPropertyChanging("Notes");
-                this._Notes = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Notes = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Notes");
                 this.OnNotesChanged();
             }
@@ -983,7 +983,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property PhotoPath in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string PhotoPath
         {
@@ -995,7 +995,7 @@ namespace NorthwindEFModel
             {
                 this.OnPhotoPathChanging(value);
                 this.ReportPropertyChanging("PhotoPath");
-                this._PhotoPath = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._PhotoPath = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("PhotoPath");
                 this.OnPhotoPathChanged();
             }
@@ -1006,21 +1006,21 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Territories in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "EmployeesTerritories", "Territories")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "EmployeesTerritories", "Territories")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<Territory> Territories
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityCollection<Territory> Territories
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Territory>("NorthwindEFModel.EmployeesTerritories", "Territories");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Territory>("NorthwindEFModel.EmployeesTerritories", "Territories");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Territory>("NorthwindEFModel.EmployeesTerritories", "Territories", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Territory>("NorthwindEFModel.EmployeesTerritories", "Territories", value);
                 }
             }
         }
@@ -1031,7 +1031,7 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// EmployeeID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="CurrentEmployee")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="CurrentEmployee")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class CurrentEmployee : Employee
@@ -1049,7 +1049,7 @@ namespace NorthwindEFModel
             currentEmployee.EmployeeID = employeeID;
             currentEmployee.LastName = lastName;
             currentEmployee.FirstName = firstName;
-            currentEmployee.Address = global::System.Data.Objects.DataClasses.StructuralObject.VerifyComplexObjectIsNotNull(address, "Address");
+            currentEmployee.Address = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.VerifyComplexObjectIsNotNull(address, "Address");
             return currentEmployee;
         }
     }
@@ -1059,7 +1059,7 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// EmployeeID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="PreviousEmployee")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="PreviousEmployee")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PreviousEmployee : Employee
@@ -1077,7 +1077,7 @@ namespace NorthwindEFModel
             previousEmployee.EmployeeID = employeeID;
             previousEmployee.LastName = lastName;
             previousEmployee.FirstName = firstName;
-            previousEmployee.Address = global::System.Data.Objects.DataClasses.StructuralObject.VerifyComplexObjectIsNotNull(address, "Address");
+            previousEmployee.Address = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.VerifyComplexObjectIsNotNull(address, "Address");
             return previousEmployee;
         }
     }
@@ -1087,11 +1087,11 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// ProductID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Product")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Product")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     [global::System.Runtime.Serialization.KnownTypeAttribute(typeof(global::NorthwindEFModel.DiscontinuedProduct))]
-    public partial class Product : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Product : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// Create a new Product object.
@@ -1108,7 +1108,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ProductID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int ProductID
         {
@@ -1120,7 +1120,7 @@ namespace NorthwindEFModel
             {
                 this.OnProductIDChanging(value);
                 this.ReportPropertyChanging("ProductID");
-                this._ProductID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._ProductID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("ProductID");
                 this.OnProductIDChanged();
             }
@@ -1131,7 +1131,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ProductName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ProductName
         {
@@ -1143,7 +1143,7 @@ namespace NorthwindEFModel
             {
                 this.OnProductNameChanging(value);
                 this.ReportPropertyChanging("ProductName");
-                this._ProductName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._ProductName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("ProductName");
                 this.OnProductNameChanged();
             }
@@ -1154,7 +1154,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property QuantityPerUnit in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string QuantityPerUnit
         {
@@ -1166,7 +1166,7 @@ namespace NorthwindEFModel
             {
                 this.OnQuantityPerUnitChanging(value);
                 this.ReportPropertyChanging("QuantityPerUnit");
-                this._QuantityPerUnit = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._QuantityPerUnit = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("QuantityPerUnit");
                 this.OnQuantityPerUnitChanged();
             }
@@ -1177,7 +1177,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property UnitPrice in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<decimal> UnitPrice
         {
@@ -1189,7 +1189,7 @@ namespace NorthwindEFModel
             {
                 this.OnUnitPriceChanging(value);
                 this.ReportPropertyChanging("UnitPrice");
-                this._UnitPrice = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._UnitPrice = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("UnitPrice");
                 this.OnUnitPriceChanged();
             }
@@ -1200,7 +1200,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property UnitsInStock in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<short> UnitsInStock
         {
@@ -1212,7 +1212,7 @@ namespace NorthwindEFModel
             {
                 this.OnUnitsInStockChanging(value);
                 this.ReportPropertyChanging("UnitsInStock");
-                this._UnitsInStock = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._UnitsInStock = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("UnitsInStock");
                 this.OnUnitsInStockChanged();
             }
@@ -1223,7 +1223,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property UnitsOnOrder in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<short> UnitsOnOrder
         {
@@ -1235,7 +1235,7 @@ namespace NorthwindEFModel
             {
                 this.OnUnitsOnOrderChanging(value);
                 this.ReportPropertyChanging("UnitsOnOrder");
-                this._UnitsOnOrder = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._UnitsOnOrder = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("UnitsOnOrder");
                 this.OnUnitsOnOrderChanged();
             }
@@ -1246,7 +1246,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ReorderLevel in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<short> ReorderLevel
         {
@@ -1258,7 +1258,7 @@ namespace NorthwindEFModel
             {
                 this.OnReorderLevelChanging(value);
                 this.ReportPropertyChanging("ReorderLevel");
-                this._ReorderLevel = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._ReorderLevel = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("ReorderLevel");
                 this.OnReorderLevelChanged();
             }
@@ -1269,7 +1269,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Category in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Products_Category", "Category")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Products_Category", "Category")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1277,11 +1277,11 @@ namespace NorthwindEFModel
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Category>("NorthwindEFModel.Products_Category", "Category").Value;
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Category>("NorthwindEFModel.Products_Category", "Category").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Category>("NorthwindEFModel.Products_Category", "Category").Value = value;
+                ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Category>("NorthwindEFModel.Products_Category", "Category").Value = value;
             }
         }
         /// <summary>
@@ -1289,45 +1289,45 @@ namespace NorthwindEFModel
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Category> CategoryReference
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityReference<Category> CategoryReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Category>("NorthwindEFModel.Products_Category", "Category");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Category>("NorthwindEFModel.Products_Category", "Category");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Category>("NorthwindEFModel.Products_Category", "Category", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Category>("NorthwindEFModel.Products_Category", "Category", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for OrderDetails in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Order_Details_Product", "OrderDetails")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Order_Details_Product", "OrderDetails")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<OrderDetail> OrderDetails
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityCollection<OrderDetail> OrderDetails
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<OrderDetail>("NorthwindEFModel.Order_Details_Product", "OrderDetails");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<OrderDetail>("NorthwindEFModel.Order_Details_Product", "OrderDetails");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<OrderDetail>("NorthwindEFModel.Order_Details_Product", "OrderDetails", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<OrderDetail>("NorthwindEFModel.Order_Details_Product", "OrderDetails", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for Supplier in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Products_Supplier", "Supplier")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Products_Supplier", "Supplier")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1335,11 +1335,11 @@ namespace NorthwindEFModel
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("NorthwindEFModel.Products_Supplier", "Supplier").Value;
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("NorthwindEFModel.Products_Supplier", "Supplier").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("NorthwindEFModel.Products_Supplier", "Supplier").Value = value;
+                ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("NorthwindEFModel.Products_Supplier", "Supplier").Value = value;
             }
         }
         /// <summary>
@@ -1347,17 +1347,17 @@ namespace NorthwindEFModel
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Supplier> SupplierReference
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityReference<Supplier> SupplierReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("NorthwindEFModel.Products_Supplier", "Supplier");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("NorthwindEFModel.Products_Supplier", "Supplier");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Supplier>("NorthwindEFModel.Products_Supplier", "Supplier", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Supplier>("NorthwindEFModel.Products_Supplier", "Supplier", value);
                 }
             }
         }
@@ -1368,7 +1368,7 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// ProductID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="DiscontinuedProduct")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="DiscontinuedProduct")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class DiscontinuedProduct : Product
@@ -1388,7 +1388,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property DiscontinuedDate in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public global::System.Nullable<global::System.DateTime> DiscontinuedDate
         {
@@ -1400,7 +1400,7 @@ namespace NorthwindEFModel
             {
                 this.OnDiscontinuedDateChanging(value);
                 this.ReportPropertyChanging("DiscontinuedDate");
-                this._DiscontinuedDate = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._DiscontinuedDate = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("DiscontinuedDate");
                 this.OnDiscontinuedDateChanged();
             }
@@ -1415,10 +1415,10 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// CustomerID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Customer")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Customer")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Customer : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Customer : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// Create a new Customer object.
@@ -1431,13 +1431,13 @@ namespace NorthwindEFModel
             Customer customer = new Customer();
             customer.CustomerID = customerID;
             customer.CompanyName = companyName;
-            customer.Address = global::System.Data.Objects.DataClasses.StructuralObject.VerifyComplexObjectIsNotNull(address, "Address");
+            customer.Address = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.VerifyComplexObjectIsNotNull(address, "Address");
             return customer;
         }
         /// <summary>
         /// There are no comments for Property CustomerID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string CustomerID
         {
@@ -1449,7 +1449,7 @@ namespace NorthwindEFModel
             {
                 this.OnCustomerIDChanging(value);
                 this.ReportPropertyChanging("CustomerID");
-                this._CustomerID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._CustomerID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("CustomerID");
                 this.OnCustomerIDChanged();
             }
@@ -1460,7 +1460,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property CompanyName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string CompanyName
         {
@@ -1472,7 +1472,7 @@ namespace NorthwindEFModel
             {
                 this.OnCompanyNameChanging(value);
                 this.ReportPropertyChanging("CompanyName");
-                this._CompanyName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._CompanyName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("CompanyName");
                 this.OnCompanyNameChanged();
             }
@@ -1483,7 +1483,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ContactName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ContactName
         {
@@ -1495,7 +1495,7 @@ namespace NorthwindEFModel
             {
                 this.OnContactNameChanging(value);
                 this.ReportPropertyChanging("ContactName");
-                this._ContactName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ContactName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ContactName");
                 this.OnContactNameChanged();
             }
@@ -1506,7 +1506,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ContactTitle in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ContactTitle
         {
@@ -1518,7 +1518,7 @@ namespace NorthwindEFModel
             {
                 this.OnContactTitleChanging(value);
                 this.ReportPropertyChanging("ContactTitle");
-                this._ContactTitle = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ContactTitle = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ContactTitle");
                 this.OnContactTitleChanged();
             }
@@ -1529,7 +1529,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Address in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmComplexPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmComplexPropertyAttribute()]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         [global::System.Xml.Serialization.XmlElement(IsNullable=true)]
         [global::System.Xml.Serialization.SoapElement(IsNullable=true)]
@@ -1559,7 +1559,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Phone in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Phone
         {
@@ -1571,7 +1571,7 @@ namespace NorthwindEFModel
             {
                 this.OnPhoneChanging(value);
                 this.ReportPropertyChanging("Phone");
-                this._Phone = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Phone = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Phone");
                 this.OnPhoneChanged();
             }
@@ -1582,7 +1582,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Fax in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Fax
         {
@@ -1594,7 +1594,7 @@ namespace NorthwindEFModel
             {
                 this.OnFaxChanging(value);
                 this.ReportPropertyChanging("Fax");
-                this._Fax = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Fax = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Fax");
                 this.OnFaxChanged();
             }
@@ -1605,21 +1605,21 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Orders in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "CustomerOrders", "Orders")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "CustomerOrders", "Orders")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<Order> Orders
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityCollection<Order> Orders
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Order>("NorthwindEFModel.CustomerOrders", "Orders");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Order>("NorthwindEFModel.CustomerOrders", "Orders");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Order>("NorthwindEFModel.CustomerOrders", "Orders", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Order>("NorthwindEFModel.CustomerOrders", "Orders", value);
                 }
             }
         }
@@ -1630,10 +1630,10 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// CategoryID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Category")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Category")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Category : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Category : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// Create a new Category object.
@@ -1650,7 +1650,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property CategoryID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int CategoryID
         {
@@ -1662,7 +1662,7 @@ namespace NorthwindEFModel
             {
                 this.OnCategoryIDChanging(value);
                 this.ReportPropertyChanging("CategoryID");
-                this._CategoryID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._CategoryID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("CategoryID");
                 this.OnCategoryIDChanged();
             }
@@ -1673,7 +1673,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property CategoryName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string CategoryName
         {
@@ -1685,7 +1685,7 @@ namespace NorthwindEFModel
             {
                 this.OnCategoryNameChanging(value);
                 this.ReportPropertyChanging("CategoryName");
-                this._CategoryName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._CategoryName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("CategoryName");
                 this.OnCategoryNameChanged();
             }
@@ -1696,7 +1696,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Description in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Description
         {
@@ -1708,7 +1708,7 @@ namespace NorthwindEFModel
             {
                 this.OnDescriptionChanging(value);
                 this.ReportPropertyChanging("Description");
-                this._Description = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Description = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Description");
                 this.OnDescriptionChanged();
             }
@@ -1719,19 +1719,19 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Picture in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public byte[] Picture
         {
             get
             {
-                return global::System.Data.Objects.DataClasses.StructuralObject.GetValidValue(this._Picture);
+                return global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.GetValidValue(this._Picture);
             }
             set
             {
                 this.OnPictureChanging(value);
                 this.ReportPropertyChanging("Picture");
-                this._Picture = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Picture = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Picture");
                 this.OnPictureChanged();
             }
@@ -1742,21 +1742,21 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Products in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Products_Category", "Products")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Products_Category", "Products")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<Product> Products
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityCollection<Product> Products
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product>("NorthwindEFModel.Products_Category", "Products");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product>("NorthwindEFModel.Products_Category", "Products");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product>("NorthwindEFModel.Products_Category", "Products", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product>("NorthwindEFModel.Products_Category", "Products", value);
                 }
             }
         }
@@ -1767,10 +1767,10 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// SupplierID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Supplier")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Supplier")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Supplier : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Supplier : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// Create a new Supplier object.
@@ -1783,13 +1783,13 @@ namespace NorthwindEFModel
             Supplier supplier = new Supplier();
             supplier.SupplierID = supplierID;
             supplier.CompanyName = companyName;
-            supplier.Address = global::System.Data.Objects.DataClasses.StructuralObject.VerifyComplexObjectIsNotNull(address, "Address");
+            supplier.Address = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.VerifyComplexObjectIsNotNull(address, "Address");
             return supplier;
         }
         /// <summary>
         /// There are no comments for Property SupplierID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int SupplierID
         {
@@ -1801,7 +1801,7 @@ namespace NorthwindEFModel
             {
                 this.OnSupplierIDChanging(value);
                 this.ReportPropertyChanging("SupplierID");
-                this._SupplierID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._SupplierID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("SupplierID");
                 this.OnSupplierIDChanged();
             }
@@ -1812,7 +1812,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property CompanyName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string CompanyName
         {
@@ -1824,7 +1824,7 @@ namespace NorthwindEFModel
             {
                 this.OnCompanyNameChanging(value);
                 this.ReportPropertyChanging("CompanyName");
-                this._CompanyName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._CompanyName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("CompanyName");
                 this.OnCompanyNameChanged();
             }
@@ -1835,7 +1835,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ContactName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ContactName
         {
@@ -1847,7 +1847,7 @@ namespace NorthwindEFModel
             {
                 this.OnContactNameChanging(value);
                 this.ReportPropertyChanging("ContactName");
-                this._ContactName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ContactName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ContactName");
                 this.OnContactNameChanged();
             }
@@ -1858,7 +1858,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ContactTitle in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string ContactTitle
         {
@@ -1870,7 +1870,7 @@ namespace NorthwindEFModel
             {
                 this.OnContactTitleChanging(value);
                 this.ReportPropertyChanging("ContactTitle");
-                this._ContactTitle = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._ContactTitle = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("ContactTitle");
                 this.OnContactTitleChanged();
             }
@@ -1881,7 +1881,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Address in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmComplexPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmComplexPropertyAttribute()]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         [global::System.Xml.Serialization.XmlElement(IsNullable=true)]
         [global::System.Xml.Serialization.SoapElement(IsNullable=true)]
@@ -1911,7 +1911,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Phone in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Phone
         {
@@ -1923,7 +1923,7 @@ namespace NorthwindEFModel
             {
                 this.OnPhoneChanging(value);
                 this.ReportPropertyChanging("Phone");
-                this._Phone = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Phone = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Phone");
                 this.OnPhoneChanged();
             }
@@ -1934,7 +1934,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Fax in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Fax
         {
@@ -1946,7 +1946,7 @@ namespace NorthwindEFModel
             {
                 this.OnFaxChanging(value);
                 this.ReportPropertyChanging("Fax");
-                this._Fax = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Fax = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Fax");
                 this.OnFaxChanged();
             }
@@ -1957,7 +1957,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property HomePage in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string HomePage
         {
@@ -1969,7 +1969,7 @@ namespace NorthwindEFModel
             {
                 this.OnHomePageChanging(value);
                 this.ReportPropertyChanging("HomePage");
-                this._HomePage = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._HomePage = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("HomePage");
                 this.OnHomePageChanged();
             }
@@ -1980,21 +1980,21 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Products in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Products_Supplier", "Products")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Products_Supplier", "Products")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<Product> Products
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityCollection<Product> Products
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product>("NorthwindEFModel.Products_Supplier", "Products");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product>("NorthwindEFModel.Products_Supplier", "Products");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product>("NorthwindEFModel.Products_Supplier", "Products", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product>("NorthwindEFModel.Products_Supplier", "Products", value);
                 }
             }
         }
@@ -2006,10 +2006,10 @@ namespace NorthwindEFModel
     /// OrderID
     /// ProductID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="OrderDetail")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="OrderDetail")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class OrderDetail : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class OrderDetail : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// Create a new OrderDetail object.
@@ -2032,7 +2032,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property OrderID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int OrderID
         {
@@ -2044,7 +2044,7 @@ namespace NorthwindEFModel
             {
                 this.OnOrderIDChanging(value);
                 this.ReportPropertyChanging("OrderID");
-                this._OrderID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._OrderID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("OrderID");
                 this.OnOrderIDChanged();
             }
@@ -2055,7 +2055,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property ProductID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int ProductID
         {
@@ -2067,7 +2067,7 @@ namespace NorthwindEFModel
             {
                 this.OnProductIDChanging(value);
                 this.ReportPropertyChanging("ProductID");
-                this._ProductID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._ProductID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("ProductID");
                 this.OnProductIDChanged();
             }
@@ -2078,7 +2078,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property UnitPrice in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public decimal UnitPrice
         {
@@ -2090,7 +2090,7 @@ namespace NorthwindEFModel
             {
                 this.OnUnitPriceChanging(value);
                 this.ReportPropertyChanging("UnitPrice");
-                this._UnitPrice = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._UnitPrice = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("UnitPrice");
                 this.OnUnitPriceChanged();
             }
@@ -2101,7 +2101,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Quantity in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public short Quantity
         {
@@ -2113,7 +2113,7 @@ namespace NorthwindEFModel
             {
                 this.OnQuantityChanging(value);
                 this.ReportPropertyChanging("Quantity");
-                this._Quantity = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._Quantity = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("Quantity");
                 this.OnQuantityChanged();
             }
@@ -2124,7 +2124,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Discount in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public float Discount
         {
@@ -2136,7 +2136,7 @@ namespace NorthwindEFModel
             {
                 this.OnDiscountChanging(value);
                 this.ReportPropertyChanging("Discount");
-                this._Discount = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._Discount = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("Discount");
                 this.OnDiscountChanged();
             }
@@ -2147,7 +2147,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Order in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Order_Details_Order", "Order")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Order_Details_Order", "Order")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2155,11 +2155,11 @@ namespace NorthwindEFModel
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Order>("NorthwindEFModel.Order_Details_Order", "Order").Value;
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Order>("NorthwindEFModel.Order_Details_Order", "Order").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Order>("NorthwindEFModel.Order_Details_Order", "Order").Value = value;
+                ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Order>("NorthwindEFModel.Order_Details_Order", "Order").Value = value;
             }
         }
         /// <summary>
@@ -2167,24 +2167,24 @@ namespace NorthwindEFModel
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Order> OrderReference
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityReference<Order> OrderReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Order>("NorthwindEFModel.Order_Details_Order", "Order");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Order>("NorthwindEFModel.Order_Details_Order", "Order");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Order>("NorthwindEFModel.Order_Details_Order", "Order", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Order>("NorthwindEFModel.Order_Details_Order", "Order", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for Product in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Order_Details_Product", "Product")]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("NorthwindEFModel", "Order_Details_Product", "Product")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2192,11 +2192,11 @@ namespace NorthwindEFModel
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("NorthwindEFModel.Order_Details_Product", "Product").Value;
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("NorthwindEFModel.Order_Details_Product", "Product").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("NorthwindEFModel.Order_Details_Product", "Product").Value = value;
+                ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("NorthwindEFModel.Order_Details_Product", "Product").Value = value;
             }
         }
         /// <summary>
@@ -2204,17 +2204,17 @@ namespace NorthwindEFModel
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Product> ProductReference
+        public global::System.Data.Entity.Core.Objects.DataClasses.EntityReference<Product> ProductReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("NorthwindEFModel.Order_Details_Product", "Product");
+                return ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("NorthwindEFModel.Order_Details_Product", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Product>("NorthwindEFModel.Order_Details_Product", "Product", value);
+                    ((global::System.Data.Entity.Core.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Product>("NorthwindEFModel.Order_Details_Product", "Product", value);
                 }
             }
         }
@@ -2222,15 +2222,15 @@ namespace NorthwindEFModel
     /// <summary>
     /// There are no comments for ComplexType NorthwindEFModel.CommonAddress in the schema.
     /// </summary>
-    [global::System.Data.Objects.DataClasses.EdmComplexTypeAttribute(NamespaceName="NorthwindEFModel", Name="CommonAddress")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmComplexTypeAttribute(NamespaceName="NorthwindEFModel", Name="CommonAddress")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class CommonAddress : global::System.Data.Objects.DataClasses.ComplexObject
+    public partial class CommonAddress : global::System.Data.Entity.Core.Objects.DataClasses.ComplexObject
     {
         /// <summary>
         /// There are no comments for Property Address in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Address
         {
@@ -2242,7 +2242,7 @@ namespace NorthwindEFModel
             {
                 this.OnAddressChanging(value);
                 this.ReportPropertyChanging("Address");
-                this._Address = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Address = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Address");
                 this.OnAddressChanged();
             }
@@ -2253,7 +2253,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property City in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string City
         {
@@ -2265,7 +2265,7 @@ namespace NorthwindEFModel
             {
                 this.OnCityChanging(value);
                 this.ReportPropertyChanging("City");
-                this._City = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._City = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("City");
                 this.OnCityChanged();
             }
@@ -2276,7 +2276,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Region in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Region
         {
@@ -2288,7 +2288,7 @@ namespace NorthwindEFModel
             {
                 this.OnRegionChanging(value);
                 this.ReportPropertyChanging("Region");
-                this._Region = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Region = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Region");
                 this.OnRegionChanged();
             }
@@ -2299,7 +2299,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property PostalCode in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string PostalCode
         {
@@ -2311,7 +2311,7 @@ namespace NorthwindEFModel
             {
                 this.OnPostalCodeChanging(value);
                 this.ReportPropertyChanging("PostalCode");
-                this._PostalCode = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._PostalCode = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("PostalCode");
                 this.OnPostalCodeChanged();
             }
@@ -2322,7 +2322,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property Country in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Country
         {
@@ -2334,7 +2334,7 @@ namespace NorthwindEFModel
             {
                 this.OnCountryChanging(value);
                 this.ReportPropertyChanging("Country");
-                this._Country = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._Country = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("Country");
                 this.OnCountryChanged();
             }
@@ -2349,10 +2349,10 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// TerritoryID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Territory")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Territory")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Territory : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Territory : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// Create a new Territory object.
@@ -2369,7 +2369,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property TerritoryID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int TerritoryID
         {
@@ -2381,7 +2381,7 @@ namespace NorthwindEFModel
             {
                 this.OnTerritoryIDChanging(value);
                 this.ReportPropertyChanging("TerritoryID");
-                this._TerritoryID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._TerritoryID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("TerritoryID");
                 this.OnTerritoryIDChanged();
             }
@@ -2392,7 +2392,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property TerritoryDescription in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string TerritoryDescription
         {
@@ -2404,7 +2404,7 @@ namespace NorthwindEFModel
             {
                 this.OnTerritoryDescriptionChanging(value);
                 this.ReportPropertyChanging("TerritoryDescription");
-                this._TerritoryDescription = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._TerritoryDescription = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("TerritoryDescription");
                 this.OnTerritoryDescriptionChanged();
             }
@@ -2419,10 +2419,10 @@ namespace NorthwindEFModel
     /// <KeyProperties>
     /// RegionID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Region")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NorthwindEFModel", Name="Region")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Region : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Region : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// Create a new Region object.
@@ -2439,7 +2439,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property RegionID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public int RegionID
         {
@@ -2451,7 +2451,7 @@ namespace NorthwindEFModel
             {
                 this.OnRegionIDChanging(value);
                 this.ReportPropertyChanging("RegionID");
-                this._RegionID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._RegionID = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("RegionID");
                 this.OnRegionIDChanged();
             }
@@ -2462,7 +2462,7 @@ namespace NorthwindEFModel
         /// <summary>
         /// There are no comments for Property RegionDescription in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string RegionDescription
         {
@@ -2474,7 +2474,7 @@ namespace NorthwindEFModel
             {
                 this.OnRegionDescriptionChanging(value);
                 this.ReportPropertyChanging("RegionDescription");
-                this._RegionDescription = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._RegionDescription = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
                 this.ReportPropertyChanged("RegionDescription");
                 this.OnRegionDescriptionChanged();
             }

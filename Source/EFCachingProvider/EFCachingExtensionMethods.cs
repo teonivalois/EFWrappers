@@ -2,9 +2,9 @@
 
 using System;
 using System.Data.Common;
-using System.Data.Objects;
 using EFCachingProvider.Caching;
 using EFProviderWrapperToolkit;
+using System.Data.Entity.Core.Objects;
 
 namespace EFCachingProvider
 {

@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Data.Metadata.Edm;
 using System.Globalization;
 using System.Text;
 using System.Threading;
 using EFCachingProvider.Caching;
 using EFProviderWrapperToolkit;
+using System.Data.Entity.Core.Metadata.Edm;
 
 namespace EFCachingProvider
 {

@@ -4,6 +4,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
+using System.Data.Entity.Core.Common;
 using System.Diagnostics.Contracts;
 using System.Linq;
 
@@ -13,7 +14,7 @@ namespace EFProviderWrapperToolkit
     /// Common implementation of the <see cref="DbProviderFactory"/> methods.
     /// </summary>
     [CLSCompliant(false)]
-    public abstract class DbProviderFactoryBase : DbProviderFactory, IServiceProvider
+    public abstract class DbProviderFactoryBase : DbProviderFactory
     {
         private DbProviderServices services;
 
@@ -134,26 +135,5 @@ namespace EFProviderWrapperToolkit
         /// A new instance of <see cref="T:System.Data.Common.DbConnection"/>.
         /// </returns>
         public abstract override DbConnection CreateConnection();
-
-        /// <summary>
-        /// Gets the service object of the specified type.
-        /// </summary>
-        /// <param name="serviceType">An object that specifies the type of service object to get.</param>
-        /// <returns>
-        /// A service object of type <paramref name="serviceType"/>.
-        /// -or-
-        /// null if there is no service object of type <paramref name="serviceType"/>.
-        /// </returns>
-        public object GetService(Type serviceType)
-        {
-            if (serviceType == typeof(DbProviderServices))
-            {
-                return this.services;
-            }
-            else
-            {
-                return null;
-            }
-        }
     }
 }

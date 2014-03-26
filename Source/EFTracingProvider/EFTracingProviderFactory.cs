@@ -3,7 +3,7 @@
 using System;
 using System.Data.Common;
 using EFProviderWrapperToolkit;
-using System.Data.EntityClient;
+using System.Data.Entity.Core.Common;
 
 namespace EFTracingProvider
 {

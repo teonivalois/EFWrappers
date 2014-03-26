@@ -28,7 +28,7 @@ namespace AspNetCachingDemo {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSource1;
+        protected global::Microsoft.AspNet.EntityDataSource.EntityDataSource EntityDataSource1;
         
         /// <summary>
         /// EntityDataSource2 control.
@@ -37,7 +37,7 @@ namespace AspNetCachingDemo {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSource2;
+        protected global::Microsoft.AspNet.EntityDataSource.EntityDataSource EntityDataSource2;
         
         /// <summary>
         /// GridView1 control.

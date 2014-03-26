@@ -1,8 +1,9 @@
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System.Data.Common;
-using System.Data.Common.CommandTrees;
 using EFProviderWrapperToolkit;
+using System.Data.Entity.Core.Common;
+using System.Data.Entity.Core.Common.CommandTrees;
 
 namespace EFCachingProvider
 {
@@ -33,15 +34,12 @@ namespace EFCachingProvider
         public static EFCachingProviderServices Instance { get; private set; }
 
         /// <summary>
-        /// Gets the default name of the wrapped provider.
+        /// Gets the name default of the wrapped provider.
         /// </summary>
-        /// <returns>
-        /// Default name of the wrapped provider (to be used when
-        /// provider is not specified in the connction string)
-        /// </returns>
+        /// <returns>Name of the default wrapped provider.</returns>
         protected override string DefaultWrappedProviderName
         {
-            get { return EFCachingProviderConfiguration.DefaultWrappedProvider; }
+            get { return EFCachingProviderConfiguration.DefaultWrappedFactory; }
         }
 
         /// <summary>

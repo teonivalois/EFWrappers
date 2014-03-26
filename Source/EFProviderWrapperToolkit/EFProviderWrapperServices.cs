@@ -29,7 +29,7 @@ namespace EFProviderWrapperToolkit
         /// <returns>Name of the default wrapped provider.</returns>
         protected override string DefaultWrappedProviderName
         {
-            get { throw new NotSupportedException("Default wrapped provider is not supported"); }
+            get { throw new NotSupportedException("Default wrapped factory is not supported"); }
         }
 
         /// <summary>

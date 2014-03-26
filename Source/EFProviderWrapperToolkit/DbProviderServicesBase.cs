@@ -3,8 +3,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.Common.CommandTrees;
-using System.Data.Metadata.Edm;
+using System.Data.Entity.Core.Common;
+using System.Data.Entity.Core.Common.CommandTrees;
+using System.Data.Entity.Core.Metadata.Edm;
 
 namespace EFProviderWrapperToolkit
 {
@@ -22,10 +23,9 @@ namespace EFProviderWrapperToolkit
         protected abstract string ProviderInvariantName { get; }
 
         /// <summary>
-        /// Gets the default name of the wrapped provider.
+        /// Gets the name default of the wrapped factory.
         /// </summary>
-        /// <returns>Default name of the wrapped provider (to be used when 
-        /// provider is not specified in the connction string)</returns>
+        /// <returns>Name of the default wrapped factory.</returns>
         protected abstract string DefaultWrappedProviderName { get; }
 
         /// <summary>
@@ -226,13 +226,12 @@ namespace EFProviderWrapperToolkit
                 throw new ArgumentException("Invalid provider factory: " + providerInvariantName);
             }
 
-            IServiceProvider serviceProvider = factory as IServiceProvider;
-            if (serviceProvider == null)
+            DbProviderServices providerServices = null;
+            using (var connection = factory.CreateConnection()) 
             {
-                throw new ArgumentException("Provider does not support Entity Framework - IServiceProvider is not supported");
+                providerServices = DbProviderServices.GetProviderServices(connection);
             }
 
-            DbProviderServices providerServices = (DbProviderServices)serviceProvider.GetService(typeof(DbProviderServices));
             if (providerServices == null)
             {
                 throw new ArgumentException("Provider does not support Entity Framework - DbProviderServices is not supported");

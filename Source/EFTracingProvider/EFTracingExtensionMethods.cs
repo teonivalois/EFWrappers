@@ -2,14 +2,13 @@
 
 using System;
 using System.Data.Common;
-using System.Data.Objects;
 using System.IO;
 using EFProviderWrapperToolkit;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Diagnostics;
-using System.Data.EntityClient;
+using System.Data.Entity.Core.Objects;
 
 namespace EFTracingProvider
 {

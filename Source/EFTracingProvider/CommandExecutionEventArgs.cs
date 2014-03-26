@@ -2,13 +2,13 @@
 
 using System;
 using System.Data.Common;
-using System.Data.Common.CommandTrees;
 using System.Globalization;
 using System.Text;
 using System.Diagnostics.Contracts;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity.Core.Common.CommandTrees;
 
 namespace EFTracingProvider
 {

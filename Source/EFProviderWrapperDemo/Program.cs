@@ -7,6 +7,7 @@ using EFProviderWrapperToolkit;
 using EFTracingProvider;
 using EFCachingProvider.Caching;
 using EFCachingProvider;
+using System.Data.Entity.Infrastructure;
 
 //
 // This sample demonstrates using Caching and Tracing providers together.
@@ -44,13 +45,15 @@ namespace EFProviderWrapperDemo
             // tracing demos
             SimpleTracingDemo();
             AdvancedTracingDemo();
+
+            Console.ReadKey();
         }
 
         private static void DdlMethodsDemo()
         {
-            using (var context = new ExtendedNorthwindEntities())
+            using (var context = new NorthwindEFEntities())
             {
-                Console.WriteLine(context.CreateDatabaseScript());
+                Console.WriteLine(((IObjectContextAdapter)context).ObjectContext.CreateDatabaseScript());
             }
         }
 
@@ -72,7 +75,7 @@ namespace EFProviderWrapperDemo
                 Console.WriteLine();
                 Console.WriteLine("*** Pass #{0}...", i);
                 Console.WriteLine();
-                using (var context = new ExtendedNorthwindEntities())
+                using (var context = new NorthwindEFEntities())
                 {
                     // set up caching
                     context.Cache = cache;
@@ -82,8 +85,8 @@ namespace EFProviderWrapperDemo
                     var cust = context.Customers.First(c => c.CustomerID == "ALFKI");
                     Console.WriteLine("Customer name: {0}", cust.ContactName);
                     Console.WriteLine("Loading orders...");
-                    cust.Orders.Load();
-                    Console.WriteLine("Order count: {0}", cust.Orders.Count);
+                    var orders = cust.Orders.ToList();
+                    Console.WriteLine("Order count: {0}", orders.Count);
                 }
             }
 
@@ -115,7 +118,7 @@ namespace EFProviderWrapperDemo
                 Console.WriteLine();
                 Console.WriteLine("*** Pass #{0}...", i);
                 Console.WriteLine();
-                using (var context = new ExtendedNorthwindEntities())
+                using (var context = new NorthwindEFEntities())
                 {
                     // set up caching
                     context.Cache = cache;
@@ -126,7 +129,7 @@ namespace EFProviderWrapperDemo
                     Console.WriteLine("Customer name: {0}", cust.ContactName);
                     cust.ContactName = "Change" + Environment.TickCount;
                     Console.WriteLine("Loading orders...");
-                    cust.Orders.Load();
+                    //cust.Orders.Load();
 
                     for (int o = 0; o < 10; ++o)
                     {
@@ -161,7 +164,7 @@ namespace EFProviderWrapperDemo
                 Console.WriteLine();
                 Console.WriteLine("*** Pass #{0}...", i);
                 Console.WriteLine();
-                using (var context = new ExtendedNorthwindEntities())
+                using (var context = new NorthwindEFEntities())
                 {
                     // set up caching
                     context.Cache = cache;
@@ -193,13 +196,13 @@ namespace EFProviderWrapperDemo
 
             using (TextWriter logFile = File.CreateText("sqllogfile.txt"))
             {
-                using (var context = new ExtendedNorthwindEntities())
+                using (var context = new NorthwindEFEntities())
                 {
                     context.Log = logFile;
 
                     // this will produce LIKE 'ALFKI%' T-SQL
                     var customer = context.Customers.Single(c => c.CustomerID.StartsWith("ALFKI"));
-                    customer.Orders.Load();
+                    //customer.Orders.Load();
 
                     customer.ContactName = "Change" + Environment.TickCount;
 
@@ -210,10 +213,10 @@ namespace EFProviderWrapperDemo
                         ContactName = "Bella Bellissima",
                     };
 
-                    context.AddToCustomers(newCustomer);
+                    context.Customers.Add(newCustomer);
                     context.SaveChanges();
 
-                    context.DeleteObject(newCustomer);
+                    context.Customers.Remove(newCustomer);
 
                     context.SaveChanges();
                 }
@@ -232,7 +235,7 @@ namespace EFProviderWrapperDemo
             // disable global logging to console
             EFTracingProviderConfiguration.LogToConsole = false;
 
-            using (var context = new ExtendedNorthwindEntities())
+            using (var context = new NorthwindEFEntities())
             {
                 context.CommandExecuting += (sender, e) =>
                     {
@@ -245,7 +248,7 @@ namespace EFProviderWrapperDemo
                     };
 
                 var customer = context.Customers.First(c => c.CustomerID == "ALFKI");
-                customer.Orders.Load();
+                //customer.Orders.Load();
 
                 customer.ContactName = "Change" + Environment.TickCount;
 
@@ -256,10 +259,10 @@ namespace EFProviderWrapperDemo
                     ContactName = "Bella Bellissima",
                 };
 
-                context.AddToCustomers(newCustomer);
+                context.Customers.Add(newCustomer);
                 context.SaveChanges();
 
-                context.DeleteObject(newCustomer);
+                context.Customers.Remove(newCustomer);
 
                 context.SaveChanges();
             }

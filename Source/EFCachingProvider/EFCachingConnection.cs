@@ -49,7 +49,7 @@ namespace EFCachingProvider
         /// <returns>Name of the default wrapped provider.</returns>
         protected override string DefaultWrappedProviderName
         {
-            get { return EFCachingProviderConfiguration.DefaultWrappedProvider; }
+            get { return EFCachingProviderConfiguration.DefaultWrappedFactory; }
         }
 
         /// <summary>

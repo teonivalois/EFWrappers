@@ -11,7 +11,6 @@ namespace EFProviderWrapperToolkit
     /// </summary>
     public abstract class DbConnectionWrapper : DbConnection
     {
-        private static string connectionStringKey = "wrappedProvider=";
         private DbConnection wrappedConnection;
         private string wrappedProviderInvariantName;
 
@@ -87,15 +86,12 @@ namespace EFProviderWrapperToolkit
         /// <returns>
         /// The connection string used to establish the initial connection. The exact contents of the connection string depend on the specific data source for this connection. The default value is an empty string.
         /// </returns>
-        public override string ConnectionString
-        {
-            get
-            {
-                return connectionStringKey + this.wrappedProviderInvariantName + ";" + this.wrappedConnection.ConnectionString;
+        public override string ConnectionString {
+            get {
+                return this.wrappedConnection.ConnectionString;
             }
 
-            set
-            {
+            set {
                 this.CreateConnectionFromConnectionString(value);
             }
         }
@@ -188,6 +184,16 @@ namespace EFProviderWrapperToolkit
             return this.wrappedConnection.GetSchema(collectionName, restrictionValues);
         }
 
+        public override event StateChangeEventHandler StateChange {
+            add {
+                this.wrappedConnection.StateChange += value;
+            }
+
+            remove {
+                this.wrappedConnection.StateChange -= value;
+            }
+        }
+
         /// <summary>
         /// Opens a database connection with the settings specified by the <see cref="P:System.Data.Common.DbConnection.ConnectionString"/>.
         /// </summary>
@@ -254,7 +260,7 @@ namespace EFProviderWrapperToolkit
         /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
+            if (disposing && this.wrappedConnection != null)
             {
                 this.wrappedConnection.Dispose();
             }
@@ -279,31 +285,10 @@ namespace EFProviderWrapperToolkit
         /// <param name="connectionString">The connection string.</param>
         private void CreateConnectionFromConnectionString(string connectionString)
         {
-            string providerInvariantName;
-            string newConnectionString;
-
-            int pos = connectionString.IndexOf(connectionStringKey, StringComparison.OrdinalIgnoreCase);
-            if (pos == 0)
-            {
-                int pos2 = connectionString.IndexOf(";", pos, StringComparison.Ordinal);
-                if (pos2 < 0)
-                {
-                    throw new ArgumentException("Invalid connection string format");
-                }
-
-                providerInvariantName = connectionString.Substring(connectionStringKey.Length, pos2 - connectionStringKey.Length);
-                newConnectionString = connectionString.Substring(pos2 + 1);
-            }
-            else
-            {
-                providerInvariantName = this.DefaultWrappedProviderName;
-                newConnectionString = connectionString;
-            }
-
-            DbProviderFactory factory = DbProviderFactories.GetFactory(providerInvariantName);
-            this.wrappedProviderInvariantName = providerInvariantName;
+            DbProviderFactory factory = DbProviderFactories.GetFactory(this.DefaultWrappedProviderName);
+            this.wrappedProviderInvariantName = this.DefaultWrappedProviderName;
             this.wrappedConnection = factory.CreateConnection();
-            this.wrappedConnection.ConnectionString = newConnectionString;
+            this.wrappedConnection.ConnectionString = connectionString;
         }
     }
 }

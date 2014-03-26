@@ -4,24 +4,20 @@ using EFCachingProvider;
 using EFCachingProvider.Caching;
 using EFProviderWrapperToolkit;
 using EFTracingProvider;
+using System.Data.Entity.Infrastructure;
 
 namespace EFProviderWrapperDemo
 {
-    public partial class ExtendedNorthwindEntities : NorthwindEFEntities
+    public partial class NorthwindEFEntities
     {
         private TextWriter logOutput;
 
-        public ExtendedNorthwindEntities()
-            : this("name=NorthwindEFEntities")
-        {
-        }
-
-        public ExtendedNorthwindEntities(string connectionString)
+        public NorthwindEFEntities(string connectionString)
             : base(EntityConnectionWrapperUtils.CreateEntityConnectionWithWrappers(
                     connectionString,
                     "EFTracingProvider",
                     "EFCachingProvider"
-            ))
+            ), true)
         {
         }
 
@@ -29,7 +25,7 @@ namespace EFProviderWrapperDemo
 
         private EFTracingConnection TracingConnection
         {
-            get { return this.UnwrapConnection<EFTracingConnection>(); }
+            get { return ((IObjectContextAdapter)this).ObjectContext.UnwrapConnection<EFTracingConnection>(); }
         }
 
         public event EventHandler<CommandExecutionEventArgs> CommandExecuting
@@ -87,7 +83,7 @@ namespace EFProviderWrapperDemo
 
         private EFCachingConnection CachingConnection
         {
-            get { return this.UnwrapConnection<EFCachingConnection>(); }
+            get { return ((IObjectContextAdapter)this).ObjectContext.UnwrapConnection<EFCachingConnection>(); }
         }
 
         public ICache Cache
