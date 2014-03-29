@@ -3,6 +3,7 @@
 using System.Configuration;
 using EFCachingProvider.Caching;
 using EFProviderWrapperToolkit;
+using System;
 
 namespace EFCachingProvider
 {
@@ -17,6 +18,47 @@ namespace EFCachingProvider
         static EFCachingProviderConfiguration()
         {
             DefaultCachingPolicy = CachingPolicy.NoCaching;
+            string customPolicyTypeName = ConfigurationManager.AppSettings["EFCachingProvider.CachingPolicyType"];
+            if (!string.IsNullOrEmpty(customPolicyTypeName)) {
+                Type customPolicyType = null;
+                try 
+                {
+                    customPolicyType = Type.GetType(customPolicyTypeName);
+                } 
+                catch 
+                {
+                    throw new Exception("Failed to instantiate Caching Policy for type: " + customPolicyTypeName);
+                }
+
+                if (customPolicyType == null || customPolicyType.IsAssignableFrom(typeof(CachingPolicy))) 
+                {
+                    throw new Exception("Provided Caching Policy is not an instance of: " + typeof(CachingPolicy).FullName);
+                }
+
+                DefaultCachingPolicy = (CachingPolicy)Activator.CreateInstance(customPolicyType);
+            }
+
+            DefaultCache = null;
+            string customCacheProviderName = ConfigurationManager.AppSettings["EFCachingProvider.CachingProviderType"];
+            if (!string.IsNullOrEmpty(customCacheProviderName)) {
+                Type customProviderType = Type.GetType(customCacheProviderName);
+                try 
+                {
+                    customProviderType = Type.GetType(customCacheProviderName);
+                } 
+                catch 
+                {
+                    throw new Exception("Failed to instantiate Caching Provider for type: " + customCacheProviderName);
+                }
+
+                if (customProviderType == null || customProviderType.IsAssignableFrom(typeof(ICache))) 
+                {
+                    throw new Exception("Provided Caching Provider is not an instance of: " + typeof(ICache).FullName);
+                }
+
+                DefaultCache = (ICache)Activator.CreateInstance(customProviderType);
+            }
+
             DefaultWrappedFactory = ConfigurationManager.AppSettings["EFCachingProvider.wrappedProvider"];
             DefaultWrappedServices = ConfigurationManager.AppSettings["EFCachingProvider.wrappedServices"];
         }
