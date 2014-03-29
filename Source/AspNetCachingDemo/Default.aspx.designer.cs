@@ -22,24 +22,6 @@ namespace AspNetCachingDemo {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// EntityDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.AspNet.EntityDataSource.EntityDataSource EntityDataSource1;
-        
-        /// <summary>
-        /// EntityDataSource2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.AspNet.EntityDataSource.EntityDataSource EntityDataSource2;
-        
-        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>
@@ -47,14 +29,5 @@ namespace AspNetCachingDemo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// GridView2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
     }
 }

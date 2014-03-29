@@ -59,8 +59,7 @@ namespace EFCachingProvider
                 DefaultCache = (ICache)Activator.CreateInstance(customProviderType);
             }
 
-            DefaultWrappedFactory = ConfigurationManager.AppSettings["EFCachingProvider.wrappedProvider"];
-            DefaultWrappedServices = ConfigurationManager.AppSettings["EFCachingProvider.wrappedServices"];
+            DefaultWrappedFactory = ConfigurationManager.AppSettings["EFCachingProvider.WrappedProvider"];
         }
 
         /// <summary>
@@ -68,12 +67,6 @@ namespace EFCachingProvider
         /// </summary>
         /// <value>The default wrapped factory.</value>
         public static string DefaultWrappedFactory { get; set; }
-
-        /// <summary>
-        /// Gets or sets the default wrapped services.
-        /// </summary>
-        /// <value>The default wrapped services.</value>
-        public static string DefaultWrappedServices { get; set; }
 
         /// <summary>
         /// Gets or sets default caching <see cref="ICache"/> implementation which should be used for new connections.

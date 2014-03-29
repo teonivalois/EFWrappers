@@ -11,33 +11,11 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
-        <ef:EntityDataSource ID="EntityDataSource1" runat="server" 
-            DefaultContainerName="NorthwindEFEntities" EnableDelete="True" 
-            ContextTypeName="AspNetCachingDemo.NorthwindEFEntities, AspNetCachingDemo"
-            EnableInsert="True" EnableUpdate="True" EntitySetName="Customers">
-        </ef:EntityDataSource>
-    
-        <ef:EntityDataSource ID="EntityDataSource2" runat="server" 
-            DefaultContainerName="NorthwindEFEntities" EnableDelete="True" 
-            ContextTypeName="AspNetCachingDemo.NorthwindEFEntities, AspNetCachingDemo"
-            EnableInsert="True" EnableUpdate="True" EntitySetName="Orders" 
-            EntityTypeFilter="InternationalOrder" ConnectionString="" 
-            Select="" 
-            Where="it.Customer.CustomerID = @CustomerID">
-            <WhereParameters>
-                <asp:ControlParameter ControlID="GridView1" DbType="String" 
-                    DefaultValue="&quot;-----&quot;" Name="CustomerID" 
-                    PropertyName="SelectedValue" />
-            </WhereParameters>
-        </ef:EntityDataSource>
-    
         <br />
         <b>Customers:</b><br />
     
     </div>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        DataKeyNames="CustomerID" DataSourceID="EntityDataSource1" 
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerID"
         AllowPaging="True" AllowSorting="True" AutoGenerateEditButton="True" 
         AutoGenerateSelectButton="True" BackColor="White" BorderColor="#E7E7FF" 
         BorderStyle="None" BorderWidth="1px" CellPadding="3" 
@@ -64,23 +42,6 @@
                 SortExpression="Address.Country" />
             <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
             <asp:BoundField DataField="Fax" HeaderText="Fax" SortExpression="Fax" />
-        </Columns>
-        <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
-        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
-        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
-        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
-        <AlternatingRowStyle BackColor="#F7F7F7" />
-    </asp:GridView>
-    <br />
-    Orders:<br />
-    <asp:GridView ID="GridView2" runat="server" AllowPaging="True" 
-        AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" 
-        BorderWidth="1px" CellPadding="3" DataSourceID="EntityDataSource2" 
-        GridLines="Horizontal">
-        <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
-        <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" 
-                ShowSelectButton="True" />
         </Columns>
         <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
         <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />

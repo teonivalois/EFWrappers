@@ -11,6 +11,9 @@ namespace AspNetCachingDemo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            NorthwindEFEntities entities = new NorthwindEFEntities();
+            var customers = entities.Customers.ToList();
+            this.GridView1.DataSource = customers;
         }
     }
 }
